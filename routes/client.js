@@ -8,6 +8,8 @@ const clientControllers = require('../controllers/client');
 
 
 router.get('/', clientControllers.getIndex);
+
+router.post('/sms-sender', clientControllers.postSms);
 // router.get('/order', clientControllers.getIndex);
 
 
