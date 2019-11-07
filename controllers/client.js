@@ -1,35 +1,40 @@
+const Queries = require('../queries/CRUD');
+
+
+const smsController = require('../utils/smsController');
+const smsSender = smsController.sendSms;
+
+
+
+//
+// ─── MODELS ─────────────────────────────────────────────────────────────────────
+const Number = require('../models/order.model')
+
+
+
 exports.getIndex = (req, res, next) => {
     res.render('client/index.ejs');
 }
 
 
-// const messagebird = require('messagebird')('N2hPCuBVg9WurWnpg2SGSF3bd');
-
-//     const params = {
-//         'originator': '+995598160398',
-//         'recipients': [
-//             '+995598160398'
-//         ],
-//         'body': 'Hello from kvibuk 8008'
-//     };
-
-//     messagebird.messages.create(params, function (err, response) {
-//         if (err) {
-//             console.log("ERROR:");
-//             console.log(err);
-//         } else {
-//             console.log("SUCCESS:");
-//             console.log(response);
-//             res.render('client/index.ejs');
-//         }
-//     });
-
 
 
 exports.postSms = (req, res, next) => {
-    
+    const { PhoneNumber, roomAmount, bathroomAmount } = req.body;
 
 
 
+    console.log(req.body);
+
+    const order = new Number(PhoneNumber, roomAmount, bathroomAmount);
+    Queries.save("Orders", order)
+
+    const token = {
+        token: Math.floor(1000 + Math.random() * 9000),
+        expiration: Date.now() + 600000
+    }
+
+
+    Queries.save("Tokens", token)
 
 }

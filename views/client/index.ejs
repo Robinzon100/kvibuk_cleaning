@@ -1,13 +1,13 @@
 <%- include('../includes/header.ejs') %>
 
 <div class="container" id="menu">
-    <div id="topup-form" class="bottomMenu hide">
+    <!-- <div id="topup-form" class="bottomMenu hide">
         <div class="form2 form-topup">
             <div class="input2 first2">
                 <div class="minus minus-active">
                     —
                 </div>
-                <span>1-комнатная</span>
+                <span class="amount">1</span>комнатная
                 <div class="plus plus-active">
                     +
                 </div>
@@ -16,7 +16,7 @@
                 <div class="minus">
                     —
                 </div>
-                <span>1 санузел</span>
+                <span class="amount">1</span>санузел
                 <div class="plus plus-active">
                     +
                 </div>
@@ -41,7 +41,7 @@
                 >Заказать уборку</a
             >
         </div>
-    </div>
+    </div> -->
 
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
@@ -140,13 +140,13 @@
         <main>
             <section class="welcome-wrap">
                 <div class="form-wrap">
-                    <form class="form" action="/sms-sender">
+                    <form class="form" id="phoneumberForm" >
                         <h1>Уборка квартиры</h1>
                         <div class="input first">
                             <div class="minus minus-active">
                                 —
                             </div>
-                            <span>1-комнатная</span>
+                            <input type="number" class="amount" id="amount-of-rooms" value="0">комнатная
                             <div class="plus plus-active">
                                 +
                             </div>
@@ -155,7 +155,7 @@
                             <div class="minus">
                                 —
                             </div>
-                            <span>1 санузел</span>
+                            <input type="number" class="amount" id="amount-of-bathrooms" value="0">санузел
                             <div class="plus plus-active">
                                 +
                             </div>
@@ -166,12 +166,12 @@
                             </div>
                             <input
                                 type="text"
-                                name="phone"
                                 value=""
+                                id="numberInp"
                                 placeholder="(XXX) XX-XX-XX"
                             />
                         </div>
-                        <input type="submit" class="button" value=" Рассчитать стоимость">
+                        <input type="submit" class="button" id="smsSenderBtn" value=" Рассчитать стоимость">
                            
                         </input>
                     </form>
@@ -330,7 +330,7 @@
                     </div>
                 </div>
 
-                <script src="js/js-cod.js"></script>
+                <!-- <script src="js/js-cod.js"></script> -->
             </article>
             <article class="price-list" id="prices">
                 <h2>Сколько стоит уборка квартиры</h2>
@@ -375,7 +375,7 @@
                     </span>
                 </a>
             </article>
-            <article class="bottom-form-ar" id="bottom-form">
+            <!-- <article class="bottom-form-ar" id="bottom-form">
                 <div class="btm-form-wrap">
                     <h2>
                         Заказать уборку <br class="hid-br" />
@@ -422,7 +422,7 @@
                         </div>
                     </div>
                 </div>
-            </article>
+            </article> -->
         </main>
     </div>
     <footer>

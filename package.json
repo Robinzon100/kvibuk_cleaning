@@ -5,9 +5,11 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "messagebird": "^3.1.0",
+    "mongodb": "^3.3.3",
     "nodemon": "^1.19.4"
   },
   "scripts": {
@@ -29,5 +31,6 @@
     "volleyball": "^1.5.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "http://localhost:3000"
 }
