@@ -11,7 +11,7 @@ const MongoClient = mongodb.MongoClient;
 let _db;
 
 const mongoConnect = cb => {
-    MongoClient.connect("mongodb+srv://robinzon:robinzon100@kvibuk-cleaning-xka3f.mongodb.net/kvibuk-cleaning?retryWrites=true&w=majority", { useUnifiedTopology: true } )
+    MongoClient.connect("mongodb+srv://robinzon:robinzon100@kvibuk-cleaning-xka3f.mongodb.net/kvibuk-cleaning?retryWrites=true&w=majority", { useUnifiedTopology: true })
         .then(client => {
             _db = client.db();
             cb(client);

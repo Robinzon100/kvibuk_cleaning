@@ -17,6 +17,29 @@ class Queries {
                 console.log(err);
             });
     }
+
+
+    //
+    // ─── FIND ───────────────────────────────────────────────────────────────────────
+    //
+    static validateToke(token) {
+        const db = getDb;
+        return db
+            .collection("Tokens")
+            .findOne({
+                token: token,
+                expiration: { $gt: Date.now() }
+            })
+            .toArray()
+            .then(token => {
+                return token;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
+
 }
 
 

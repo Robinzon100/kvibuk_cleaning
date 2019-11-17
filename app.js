@@ -31,19 +31,6 @@ app.set('views', 'views');
 
 
 
-//
-// ─── REQUIRE ROUTES ─────────────────────────────────────────────────────────────────────
-//
-const clientRoutes = require('./routes/client')
-
-
-
-//
-// ─── USE ROUTES ─────────────────────────────────────────────────────────────────
-// 
-
-
-
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -51,6 +38,20 @@ app.use(function (req, res, next) {
 });
 
 
+
+
+//
+// ─── REQUIRE ROUTES ─────────────────────────────────────────────────────────────────────
+//
+const clientRoutes = require('./routes/client')
+const authRoutes = require('./routes/auth')
+
+
+
+//
+// ─── USE ROUTES ─────────────────────────────────────────────────────────────────
+// 
+app.use("/auth",authRoutes)
 app.use(clientRoutes)
 
 

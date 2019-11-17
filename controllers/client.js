@@ -22,10 +22,6 @@ exports.getIndex = (req, res, next) => {
 exports.postSms = (req, res, next) => {
     const { PhoneNumber, roomAmount, bathroomAmount } = req.body;
 
-
-
-    console.log(req.body);
-
     const order = new Number(PhoneNumber, roomAmount, bathroomAmount);
     Queries.save("Orders", order)
 
@@ -35,6 +31,11 @@ exports.postSms = (req, res, next) => {
     }
 
 
+
     Queries.save("Tokens", token)
 
 }
+
+
+
+

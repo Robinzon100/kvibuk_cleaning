@@ -47,7 +47,8 @@ function javascript() {
 function watch() {
   browserSync.init({
     proxy: "http://localhost:3000",
-    port: 7000
+    port: 7000,
+    open: false
   });
 
   gulp.watch("./public/scss/**/*.scss", style);

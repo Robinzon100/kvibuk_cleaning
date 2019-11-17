@@ -1,3 +1,20 @@
-body{
-    margin:0;
+.popup {
+    width: 100vw;
+    height: 100vh;
+    background: #00000075;
+    position: fixed !important;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        width: 50%;
+        height: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
